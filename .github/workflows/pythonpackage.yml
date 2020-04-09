@@ -31,11 +31,12 @@ jobs:
       run: |
         pip install flake8
         # stop the build if there are Python syntax errors or undefined names
+        #flake8 . --ignore=E501,E722,W503,N806, N802, N803,E231 --count --exit-zero --statistics
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=20 --statistics
     - name: Test with pytest
       run: |
         pip install pytest
         pip install pytest-cov
-        python -m pytest --cov --cov-fail-under 100 --rootdir=/home/runner/work/check_workflow/check_workflow/
+        python -m pytest --cov --cov-fail-under 60 --ignore=tests
