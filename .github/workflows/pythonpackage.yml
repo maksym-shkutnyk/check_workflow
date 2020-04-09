@@ -38,4 +38,4 @@ jobs:
       run: |
         pip install pytest
         pip install pytest-cov
-        python -m pytest --cov --cov-fail-under 80 --rootdir=/home/runner/work/check_workflow/check_workflow/
+        python -m pytest --cov --cov-fail-under 100 --rootdir=/home/runner/work/check_workflow/check_workflow/
